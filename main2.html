@@ -16,7 +16,9 @@
   <script>
     let div = document.querySelector('div')
     setTimeout(() => {
-     div.remove()},2000)
+     div.remove(),
+     one.before(two)
+     },2000)
   </script>
 </body>
 </html>
