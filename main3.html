@@ -13,6 +13,9 @@
   <script>
     let div1 = document.querySelector('div')
     let div2 = div1.cloneNode(true)
+
+    div2.querySelector('p').textContent = 'New Message'
+    div1.after(div2)
   </script>
 </body>
 </html>
