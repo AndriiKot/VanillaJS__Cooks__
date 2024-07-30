@@ -11,7 +11,7 @@ for (const item of menu) {
   document.body.append(btn);
 
   btn.onclick = () => {
-    if (activeBtn) activeBtn.classList.remove("active");
+    if (activeBtn) activeBtn.classList.remove("active");  // delete the old active button
     btn.classList.add("active");
     activeBtn = btn;
   };
