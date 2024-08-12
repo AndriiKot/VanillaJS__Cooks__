@@ -13,7 +13,7 @@ for (const item of menu) {
       if (activeBtn) {
         activeBtn.classList.remove("active"); // delete the old active button
       }
-      activeBtn = el;
     }
+    activeBtn = el;
   });
 }
