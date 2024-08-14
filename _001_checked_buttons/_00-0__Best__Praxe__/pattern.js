@@ -1,19 +1,29 @@
 ﻿const menu = ["Menu", "Home", "About", "Contact"];
 let activeBtn;
 
-for (const item of menu) {
-  const btn = document.createElement("button");
-  btn.textContent = item;
-  document.body.append(btn);
+// Создаем фрагмент документа
+const fragment = document.createDocumentFragment();
 
-  btn.addEventListener("click", (event) => {
-    const el = event.currentTarget; // or event.target
+menu.forEach((item) => {
+  const btn = document.createElement("button");
+  btn.className = "menu-button";
+  btn.textContent = item;
+  fragment.appendChild(btn); // Добавляем кнопку во фрагмент
+});
+
+// Добавляем все кнопки сразу в документ
+document.body.appendChild(fragment);
+
+// Обработчик событий для делегирования
+document.body.addEventListener("click", (event) => {
+  if (event.target.className === "menu-button") {
+    const el = event.target;
     if (activeBtn !== el) {
-      el.classList.add("active");
       if (activeBtn) {
-        activeBtn.classList.remove("active"); // delete the old active button
+        activeBtn.classList.remove("active"); // Удаляем класс у предыдущей кнопки
       }
-      activeBtn = el;
+      el.classList.add("active"); // Добавляем класс к нажимаемой кнопке
+      activeBtn = el; // Обновляем активную кнопку
     }
-  });
-}
+  }
+});

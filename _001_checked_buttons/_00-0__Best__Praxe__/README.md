@@ -6,22 +6,31 @@
 const menu = ["Menu", "Home", "About", "Contact"];
 let activeBtn;
 
-for (const item of menu) {
+// Создаем фрагмент документа
+const fragment = document.createDocumentFragment();
+
+menu.forEach(item => {
   const btn = document.createElement("button");
   btn.textContent = item;
-  document.body.append(btn);
+  fragment.appendChild(btn); // Добавляем кнопку во фрагмент
+});
 
-  btn.addEventListener("click", (event) => {
-    const el = event.currentTarget; // or event.target
+// Добавляем все кнопки сразу в документ
+document.body.appendChild(fragment);
+
+// Обработчик событий для делегирования
+document.body.addEventListener("click", (event) => {
+  if (event.target.tagName === "BUTTON") {
+    const el = event.target;
     if (activeBtn !== el) {
-      el.classList.add("active");
       if (activeBtn) {
-        activeBtn.classList.remove("active"); // delete the old active button
+        activeBtn.classList.remove("active"); // Удаляем класс у предыдущей кнопки
       }
-      activeBtn = el;
+      el.classList.add("active"); // Добавляем класс к нажимаемой кнопке
+      activeBtn = el; // Обновляем активную кнопку
     }
-  });
-}
+  }
+});
 ```
 
 [![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_01_checked_menu_pattern/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_01_checked_menu_pattern/_00-0__Best__Praxe__)
