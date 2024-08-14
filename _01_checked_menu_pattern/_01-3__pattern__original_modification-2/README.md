@@ -2,7 +2,6 @@
 
 ```js
 const menu = ["Menu", "Home", "About", "Contact"];
-
 let activeBtn;
 
 for (const item of menu) {
@@ -11,10 +10,10 @@ for (const item of menu) {
   document.body.append(btn);
 
   btn.onclick = (event) => {
-    const btn = event.currentTarget;                     // or event.target
-    if (activeBtn) activeBtn.classList.remove("active"); // !!! delete the old active button !!! 
-    btn.classList.add("active");
-    activeBtn = btn;
+    const el = event.currentTarget;                      // or event.target
+    if (activeBtn) activeBtn.classList.remove("active"); // delete the old active button
+    el.classList.add("active");
+    activeBtn = el;
   };
 }
 ```
