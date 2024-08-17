@@ -1,7 +1,6 @@
 # Pattern Checked Buttons
 [![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_checked_buttons/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_checked_buttons/_00-0__Best__Praxe__)
-
-### Best Praxe:
+### Best Praxe: 
 ```js
 ﻿const menu = ["Menu", "Home", "About", "Contact"];
 let activeBtn;
