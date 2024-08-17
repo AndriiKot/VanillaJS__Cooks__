@@ -20,7 +20,7 @@ subfolders.each do |folder|
         f.puts "```js\n"
         f.puts content
         f.puts "```\n"
-        f.puts "[![Pattern Checked Buttons](https://github.com/AndriiKot/1VanillaJS__Cooks/blob/main/#{link}/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/#{link}/_00-0__Best__Praxe__)\n\n"
+        f.puts "[![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/#{link}/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/#{link}/_00-0__Best__Praxe__)\n\n"
       end
       versions << child
     end
