@@ -1,7 +1,5 @@
 #### ! For the code to work correctly, use 'live server' in Visual Studio Code !
 
-### Best Praxe:
-
 ```js
 ﻿const menu = ["Menu", "Home", "About", "Contact"];
 let activeBtn;
@@ -21,14 +19,17 @@ document.body.appendChild(fragment);
 
 // Обработчик событий для делегирования
 document.body.addEventListener("click", (event) => {
-  if (event.target.className === "menu-button") {
-    const el = event.target;
-    if (activeBtn !== el) {
-      if (activeBtn) {
-        activeBtn.classList.remove("active"); // Удаляем класс у предыдущей кнопки
+  const target = event.target;
+  const targetClass = target.classList;
+
+  if (targetClass.contains("menu-button")) {
+    const active = activeBtn;
+    if (active !== target) {
+      if (active) {
+        active.classList.remove("active"); // Удаляем класс у предыдущей кнопки
       }
-      el.classList.add("active"); // Добавляем класс к нажимаемой кнопке
-      activeBtn = el; // Обновляем активную кнопку
+      targetClass.add("active"); // Добавляем класс к нажимаемой кнопке
+      activeBtn = target; // Обновляем активную кнопку
     }
   }
 });

@@ -1,7 +1,5 @@
 #### ! For the code to work correctly, use 'live server' in Visual Studio Code !
 
-### Best Praxe:
-
 ```js
 ﻿const menu = ["Menu", "Home", "About", "Contact"];
 let activeBtn;
