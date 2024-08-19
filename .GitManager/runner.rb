@@ -44,5 +44,18 @@ subfolders.each do |folder|
 end
 
 
+File.open(parent_folder.join("README.md"), "w+") do |f|
+  f.puts("# Patterns")
+  subfolders.each do |folder|
+    if folder.basename.to_s.match?(/^_(\d{1})/)
+      pattern_name = folder.basename.to_s.split("_").reject{|x| x.to_i > 0 || x == ''}.map(&:capitalize).join(" ")
+      f.puts("[### " + folder.basename.to_s[2..3] + ". " + pattern_name + "](https://github.com/AndriiKot/VanillaJS__Cooks__/tree/main/#{folder.basename.to_s}/README.md)")
+    end
+  end
+end
+
+
+
+
 
 

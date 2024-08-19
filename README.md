@@ -1,6 +1,3 @@
-﻿# Patterns 
-
-### 01. Checked Buttons
-
-[![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_001_checked_buttons/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_001_checked_buttons/_00-0__Best__Praxe__)
-         		 																															
+# Patterns
+[### 01. Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks__/tree/main/_001_checked_buttons/README.md)
+[### 02. Render And Add Dom-elements](https://github.com/AndriiKot/VanillaJS__Cooks__/tree/main/_002_render_and_add_DOM-elements/README.md)
