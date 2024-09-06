@@ -63,4 +63,5 @@ document.body.append(addBoxEl);
 document.body.append(listEl);
 
 renderList(products);
+
 ```

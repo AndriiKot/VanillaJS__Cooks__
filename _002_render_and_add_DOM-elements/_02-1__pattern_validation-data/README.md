@@ -1,6 +1,5 @@
-# Pattern Render And Add Dom-elements
-[![Pattern Render And Add Dom-elements](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/_00-0__Best__Praxe__)
-### Best Praxe: 
+#### ! For the code to work correctly, use 'live server' in Visual Studio Code !
+[![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/_00-0__Best__Praxe__)
 ```js
 ﻿const products = [
   {
@@ -41,10 +40,11 @@ function getListItem(product) {
 }
 
 function renderList(arr) {
-  arr.forEach((product) => {
-    const newItem = getListItem(product);
+  listEl.innerHTML = "";
+  for (const item of arr) {
+    let newItem = getListItem(item);
     listEl.append(newItem);
-  });
+  }
 }
 
 function addProduct() {
@@ -52,11 +52,8 @@ function addProduct() {
   const price = Number(priceInput.value);
 
   if (name && !isNaN(price) && price > 0) {
-    const newProduct = { name, price };
-    products.push(newProduct);
-
-    const newItem = getListItem(newProduct);
-    listEl.append(newItem);
+    products.push({ name, price });
+    renderList(products);
   }
   nameInput.value = "";
   priceInput.value = "";
@@ -68,4 +65,7 @@ fragment.append(addBoxEl, listEl);
 document.body.append(fragment);
 
 renderList(products);
+
+console.log("products", products);
+console.log("Hi!!!");
 ```
