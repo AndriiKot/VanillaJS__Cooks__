@@ -1,5 +1,5 @@
-#### ! For the code to work correctly, use 'live server' in Visual Studio Code !
-[![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/__demo__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/_00-0__Best__Praxe__)
+#### ! For the code to work correctly use: 'live server' or npx http-server !
+[![Pattern Checked Buttons](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/__preview__/__v1_0_0__.png)](https://github.com/AndriiKot/VanillaJS__Cooks/blob/main/_002_render_and_add_DOM-elements/_00-0__Best__Praxe__)
 ```js
 ﻿const products = [
   {

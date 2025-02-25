@@ -1,4 +1,6 @@
-﻿const products = [
+﻿'use strict';
+
+const products = [
   {
     name: "Vasa",
     price: 300,
@@ -15,35 +17,37 @@
 const fragment = document.createDocumentFragment();
 
 const listEl = document.createElement("ul");
-const addBoxEl = document.createElement("div");
-
+const formProduct = document.createElement("form");
 const nameInput = document.createElement("input");
-nameInput.placeholder = "Product name";
-
 const priceInput = document.createElement("input");
+const addBtn = document.createElement("button");
+
+
+formProduct.className = "form-product";
+nameInput.placeholder = "Product name";
 priceInput.type = "number";
 priceInput.placeholder = "Product price";
-
-const addBtn = document.createElement("button");
+addBtn.type = "submit";
 addBtn.textContent = "Add";
 
-addBoxEl.append(nameInput, priceInput, addBtn);
 
-function getListItem(product) {
+const getListItem = (product) => {
   let itemEl = document.createElement("li");
   itemEl.textContent = `${product.name}: ${product.price}$`;
 
   return itemEl;
 }
 
-function renderList(arr) {
+const renderList = (arr) => {
   arr.forEach((product) => {
     const newItem = getListItem(product);
     listEl.append(newItem);
   });
 }
 
-function addProduct() {
+const addProduct = (e) => {
+  e.preventDefault();
+
   const name = nameInput.value;
   const price = Number(priceInput.value);
 
@@ -54,13 +58,13 @@ function addProduct() {
     const newItem = getListItem(newProduct);
     listEl.append(newItem);
   }
-  nameInput.value = "";
-  priceInput.value = "";
+  e.currentTarget.reset();
 }
 
-addBtn.addEventListener("click", addProduct);
-
-fragment.append(addBoxEl, listEl);
+formProduct.append(nameInput, priceInput, addBtn);
+fragment.append(formProduct, listEl);
 document.body.append(fragment);
 
 renderList(products);
+
+formProduct.addEventListener("submit", addProduct);
